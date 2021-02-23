@@ -41,4 +41,10 @@ class User extends Authenticatable
     {
         return $this->carts()->create(['user_id' => $this->id, 'product_id' => $id]);
     }
+
+    public function routeNotificationForNexmo($notification)
+    {
+        // return $this->phone_number;
+        return '60126581804';
+    }
 }

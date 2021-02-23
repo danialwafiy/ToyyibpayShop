@@ -37,6 +37,8 @@ class ToyyibpayController extends Controller
         $response = Http::asForm()->post('https://dev.toyyibpay.com/index.php/api/createBill', $option);
         $billCode = $response[0]['BillCode'];
 
+        //auth()->user()->notify(new PaymentNotification());
+
         return redirect('https://dev.toyyibpay.com/' . $billCode);
     }
 
